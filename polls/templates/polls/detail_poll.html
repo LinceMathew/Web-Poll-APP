@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" > </script>
+ <script>
+   $(document).ready(function(){
+    var table_body = '';
+$.ajax({
+        type:'GET',
+        url: 'http://127.0.0.1:9000/polls/polldetail',
+        success:function(polls){
+            var table_body = '';
+            var j=1;
+            table_body+='<thead>';
+            table_body+='<tr>';
+            table_body+='<th>Number</th>';
+             table_body+='<th>Options</th>';
+             table_body+='<th>Vote</th>';
+            table_body+='</tr>';
+            table_body+='</thead>'
+            
+            var voteSum=0;
+            var voteshow = '';
+            $.grep(polls, function( n, i ) {
+          //filter by question
+
+
+                    $("#head").html(n.Question)
+
+                    for(var key in n.OptionVote){
+                    
+
+   
+                    table_body+='<tr>';
+
+
+
+                    table_body +='<td style="padding-bottom: 10px;padding-top: 10px;">';
+                    table_body +=''+j;
+                    table_body +='</td>';
+                    j=j+1;
+                    table_body +='<td>';
+                    table_body +=''+key;
+                    table_body +='</td>';
+
+                    table_body +='<td>';
+                    table_body +=''+n.OptionVote[key];
+
+                    table_body +='</td>';
+
+              table_body+='</tr>';
+
+                    var vote = parseInt(n.OptionVote[key]);
+                    voteSum = voteSum + vote;
+                    }
+                    voteshow+='<div id="total">Total Votes : '+voteSum+'</div>'
+
+});
+
+
+//table_body+='</table>';
+                 $('#detailquestion').html(table_body);
+                  $('#voteSum').html(voteshow);
+
+
+        }
+        });
+       $("#button").click(function() {
+        location.href = "http://127.0.0.1:9000/static/vote_poll.html";
+
+       });
+      });
+ </script>
+  <style>
+ 
+.pie {
+  width: 150px;
+  height: 150px;
+  background-image: conic-gradient(#7B68EE 54%,#DDA0DD 46%)  ;
+  border-radius: 50%
+}
+        } 
+          div.a
+      {
+         font-size : 30px; 
+         color : red;
+         font-family: cursive;
+      }
+
+      div.c
+      {
+        font-size : 50px;
+        color : black;
+
+      }
+
+      h1{
+    text-align: center;
+    border: solid black;
+      line-height: 4;
+      background: #FFFFCC;
+      margin-top: 6px;
+      width: 1300px;
+      height: 150px;
+       }
+       p{
+        text-align: center;
+        font-size :30px;
+        color:red;
+       }
+
+
+
+   </style> 
+  
+   
+ </head> 
+ <body> 
+  <div class="a">
+    poll details 
+  </div> 
+  <h1>flyweight polls</h1> 
+  <br> 
+  <button type="button" id="jj">Home</button>
+ <script type="text/javascript">
+    document.getElementById("jj").onclick = function () {
+        location.href = "http://127.0.0.1:9000/static/home.html";
+      };
+      </script>
+
+       
+  <p id="head" ></p>
+  <button  type="button" id="button" bgcolor="#FF0020"> click here to vote</button> 
+  <table style="width:60%" align="center" border="5" id= "detailquestion"> 
+   <!--<thead> 
+    <tr bgcolor="#9CC0E7"> 
+     <th style=" font-family:courier";>Number</th> 
+     <th>option</th> 
+     <th>vote</th> 
+    </tr>
+    </thead>--> 
+    
+  </table> 
+  <div class="pie"></div> 
+  <div style="font-size:30px" id="voteSum"></div>
+
+ </body>
+</html>

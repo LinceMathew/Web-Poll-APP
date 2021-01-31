@@ -1,0 +1,72 @@
+<html>
+<head>
+ <meta charset="UTF-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+  body{
+    width: 1400px;
+  height: 400px;
+  margin-left: 0px;
+}
+  h1{
+    text-align: center;
+    border: solid black;
+      line-height: 4;
+      background: #FFFFCC;
+      margin-top: 6px;
+      width: 1500px;
+      height: 150px;
+       }
+input.a
+{
+  width: 472px;
+  height: 25px;
+}   
+input.b
+  {
+  width: 472px;
+  height: 25px;
+  }
+input.c
+  {
+  width: 472px;
+  height: 25px;
+  }
+
+
+
+ </style>
+ </head>
+ <body>
+  <h1> Flyweight polls </h1>
+  <div style="background-color: #FF99CC;">
+    <ul id="data"></ul>
+    
+     <p style="font-size:20px;">Question</p>
+   <input class="a" type="text" name="qp" placeholder="type your question here" id="Question">
+   <br>
+   <p style="font-size:30px;">Answers options</p>
+<div id="options">
+   <input class="c" type="text" name="op1" placeholder="Enter option" id='option1'>
+   <br>
+   <input class="c" type="text" name="op2" placeholder="Enter option" id="option2">
+   
+   <br>
+ </div>
+
+  <button id="addoption"  type="button">add option</button>
+
+  <p style="font-size:30px;">comma seperated tags</p>
+   <input class="b" type="text" name="t1" placeholder="tag1,tag2,tag3" id="Tag">
+  
+  <br>
+  <br>
+  <br>
+  <button id="create">create poll</button>
+  <script src="/static/create.js">
+ 
+
+</script>
+  
+  </body>
+  </html>

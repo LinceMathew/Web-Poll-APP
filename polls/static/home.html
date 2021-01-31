@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+ <head> 
+   <meta charset="UTF-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="/static/get.js">
+  </script>
+  <style>
+  body
+  {
+   background-color: #ADDEE6;
+ }
+table, th, td {
+  border: 4px solid black;
+  padding: 10px;
+}
+   h1{
+    text-align: center;
+    border: solid black;
+      line-height: 4;
+      background: #FFFFCC;
+      margin-top: 6px;
+      width: 1330px;
+      height: 150px;
+       }
+       #divfix{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+
+</style> 
+ </head> 
+ <body> 
+  <div class="b">
+    Home 
+  </div> 
+  <h1>flyweight polls</h1> 
+
+   <table  id= "filter" style="width:10%" align="left"> 
+   <tbody> 
+    <tr bgcolor="#E1F8DC"> 
+     <td>
+      <br>
+      <div id= "filterTags">
+      <!--<input type="checkbox" class="f"  name="tag" value="Sports" ><label for="C1">Sports</label> <br> <br> 
+        <input type="checkbox"class="f" name="tag" value="Games"> <label for="C2">Games</label> <br> <br>
+        <input type="checkbox"class="f" name="tag" value="Health"> <label for="C3">Health</label><br> <br>
+        <input type="checkbox"class="f" name="tag" value="Politics"> <label for="C4">Politics</label><br> <br> --->
+        </div>
+      <input type="button" id = "btn" value="filter by tags">
+       </td>
+    </tr>
+    <table>
+
+    
+ 
+   </tbody> 
+  </table> 
+  <table id="poll" style="width:60%" align="center"> 
+   <thead>
+    <tr bgcolor="#9CC097"> 
+     <th>Number</th> 
+     <th>Poll question</th> 
+     <th>Total votes</th> 
+     <th>Tags</th> 
+
+    </tr> 
+
+    </thead>
+   
+  </table>
+  
+  <div id="divfix">
+
+<button type="button" id="myButton" bgcolor="blue">create poll</button>
+ <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://127.0.0.1:9000/static/create.html";
+    };
+</script>
+  </div>
+ </body>
+</html>

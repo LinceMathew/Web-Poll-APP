@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="/static/update.js"></script>
+  <style>
+  p{
+      font-size: 60px;
+      margin : 10px;
+    }
+     h1{
+    text-align: center;
+    border: solid black;
+      line-height: 4;
+      background: #FFFFCC;
+      margin-top: 6px;
+      width: 1350px;
+      height: 150px;
+       }
+
+    </style> 
+ </head> 
+ <body> 
+  <h1>flyweight polls</h1> 
+  <button type="button" id="jj">Home</button>
+ <script type="text/javascript">
+    document.getElementById("jj").onclick = function () {
+        location.href = "http://127.0.0.1:9000/static/home.html";
+      };
+      </script>
+ 
+      <button type="button" id="myButton" bgcolor="blue">create poll</button>
+ <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://127.0.0.1:9000/static/create.html";
+    };
+</script>
+
+  <p id="question" ></p> 
+  <div id="checkbox">
+  </div>
+  <br> 
+  <br> 
+  <button type="button" id="vote">vote</button> 
+ </body>
+</html>
